@@ -4,14 +4,15 @@
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="Content-Type" content="<?php bloginfo( 'html_type' ); ?>; charset=<?php bloginfo( 'charset' ); ?>" />
     <title><?php wp_title( '|', true, 'right' ); bloginfo( 'name' ); ?></title>
-    <meta name="description" content="">
+    <meta name="author" content="L'Elite de Jose Sayago" />
+    <meta name="description" content="" />
     <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
-    <link rel="icon" type="image/x-icon" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/favicon.ico" />
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -19,6 +20,7 @@
       <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
     <![endif]-->
     <?php wp_head(); ?>
+    <script>document.createElement( "picture" );</script>
 </head>
 <body <?php body_class(); ?> id="sanando">
 	<div class="wrapper">
@@ -39,9 +41,22 @@
 				</div> <!-- end .container -->
 			</div> <!-- end .navbar -->
 		</header> <!-- end header -->
+		<?php if( is_home() || is_front_page() ) { ?>
 		<div class="jumbotron">
 			<div class="container">
-				<p class="quote">¿Nos ayudas a conseguir la Sede para seguir regalando vida?</p>
-				<a class="call-to-action">¡Quiero Ayudar!</a>
+				<span data-picture data-alt="Necesitamos Sede" class="jumbopicture">
+					<span data-src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/Boceto_1_960.jpg"></span>
+					<span data-src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/Boceto_1_260.jpg" data-media="(min-width: 300px)"></span>
+					<span data-src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/Boceto_1_360.jpg" data-media="(min-width: 400px)"></span>
+					<span data-src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/Boceto_1_760.jpg" data-media="(min-width: 800px)"></span>
+					<span data-src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/Boceto_1_960.jpg" data-media="(min-width: 1000px)"></span>
+					<!-- Fallback content for non-JS browsers. Same img src as the initial, unqualified source element. -->
+					<noscript><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/Boceto_1_960.jpg" alt="Necesitamos Sede"></noscript>
+				</span>
+				<p class="quote">
+					<em><?php echo get_theme_mod('jumbotron_hpquote'); ?></em>
+				</p>
+				<a class="btn btn-success call-to-action" href="<?php echo get_permalink( get_theme_mod('jumbotron_hpcalltoaction_link') ); ?>"><?php echo get_theme_mod('jumbotron_hpcalltoaction') ?></a>
 		    </div>
 		</div>
+		<?php } ?>

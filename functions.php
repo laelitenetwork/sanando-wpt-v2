@@ -58,9 +58,9 @@ class Bootstrap_walker extends Walker_Nav_Menu{
    	$attributes .= ! empty( $object->url )        ? ' href="'   . esc_attr( $object->url        ) .'"' : '';
 
    	// if the item has children add these two attributes to the anchor tag
-   	// if ( $args->has_children ) {
-		  // $attributes .= ' class="dropdown-toggle" data-toggle="dropdown"';
-    // }
+   	if ( $args->has_children ) {
+      $attributes .= ' class="dropdown-toggle" data-toggle="dropdown"';
+    }
 
     $item_output = $args->before;
     $item_output .= '<a'. $attributes .'>';
@@ -145,9 +145,154 @@ if( !function_exists( "theme_js" ) ) {
       get_template_directory_uri() . '/assets/bootstrap/js/bootstrap.min.js', 
       array('jquery'), 
       '3.1.1' );
-  
+    wp_register_script( 'picturefill',
+      get_template_directory_uri() . '/assets/picturefill-1.2.1/picturefill.js',
+      '',
+      '1.2.1'
+    );
     wp_enqueue_script('bootstrap');
+    wp_enqueue_script('picturefill');
   }
 }
 add_action( 'wp_enqueue_scripts', 'theme_js' );
+/**
+ * Theme Options
+ */
+function sanando_customize_register( $wp_customize ) {
+  // Front End Section
+  $wp_customize->add_section( 'sanando_front_end' , array(
+    'title'      => __( 'Opciones de Sanando', 'sanando' ),
+    'priority'   => 0,
+  ) );
+  // Jumbotron Quote
+  $wp_customize->add_setting( 'jumbotron_hpquote' , array(
+    'id'          => 'jumbotron_hpquote',
+    'default'     => 'Frase',
+    'transport'   => 'refresh',
+  ) );
+  // Control
+  $wp_customize->add_control(
+    new WP_Customize_Control(
+      $wp_customize,
+      'jumbotron_hpquote',
+      array(
+        'label'          => __( 'Frase de Entrada', 'Fundación Sanando v2.0' ),
+        'section'        => 'sanando_front_end',
+        'settings'       => 'jumbotron_hpquote',
+        'type'           => 'text',
+      )
+    )
+  );
+  // Jumbotron Homepage Call to Action
+  $wp_customize->add_setting( 'jumbotron_hpcalltoaction' , array(
+    'id'          => 'jumbotron_hpcalltoaction',
+    'default'     => 'Llamada a la Acción',
+    'transport'   => 'refresh',
+  ) );
+  // Control
+  $wp_customize->add_control(
+    new WP_Customize_Control(
+      $wp_customize,
+      'jumbotron_hpcalltoaction',
+      array(
+        'label'          => __( 'Título del Botón', 'Fundación Sanando v2.0' ),
+        'section'        => 'sanando_front_end',
+        'settings'       => 'jumbotron_hpcalltoaction',
+        'type'           => 'text',
+      )
+    )
+  );
+  // Jumbotron Homepage Call to Action Link
+  $wp_customize->add_setting( 'jumbotron_hpcalltoaction_link' , array(
+    'id'          => 'jumbotron_hpcalltoaction_link',
+    'default'     => 'Enlace de Llamada a la Acción',
+    'transport'   => 'refresh',
+  ) );
+  // Control
+  $wp_customize->add_control(
+    new WP_Customize_Control(
+      $wp_customize,
+      'jumbotron_hpcalltoaction_link',
+      array(
+        'label'          => __( 'Enlace del Botón', 'Fundación Sanando v2.0' ),
+        'section'        => 'sanando_front_end',
+        'settings'       => 'jumbotron_hpcalltoaction_link',
+        'type'           => 'dropdown-pages',
+      )
+    )
+  );
+  // Cuenta Medicamentos
+  $wp_customize->add_setting( 'medicamentos_donados' , array(
+    'id'          => 'medicamentos_donados',
+    'default'     => 'Cantidad de Medicamentos Donados',
+    'transport'   => 'refresh',
+  ) );
+  // Control
+  $wp_customize->add_control(
+    new WP_Customize_Control(
+      $wp_customize,
+      'medicamentos_donados',
+      array(
+        'label'          => __( 'Medicamentos Donados', 'Fundación Sanando v2.0' ),
+        'section'        => 'sanando_front_end',
+        'settings'       => 'medicamentos_donados',
+        'type'           => 'text',
+      )
+    )
+  );
+}
+add_action( 'customize_register', 'sanando_customize_register' );
+/**
+ * Picturefill Async
+ */
+function defer_parsing_of_js ( $url ) {
+    if ( FALSE === strpos( $url, '.js' ) ) return $url;
+    if ( !strpos( $url, 'picturefill.js' ) ) return $url;
+    return "$url' async='async";
+}
+add_filter( 'clean_url', 'defer_parsing_of_js', 11, 1 );
+/**
+ * Breadcrumbs
+ */
+function the_breadcrumb() {
+    global $post;
+    echo '<ol class="breadcrumb">';
+      if (  !is_home() || !is_front_page()  ) {
+          echo '<li><a href="';
+            echo get_option('home');
+          echo '">';
+            echo 'Home';
+          echo '</a></li>';
+          if (  is_category() || is_single()  ) {
+              echo '<li>';
+                echo the_category(' </li><li> ');
+              echo '</li>';
+              if (is_single()) {
+                  echo '</li><li>';
+                    the_title();
+                  echo '</li>';
+              }
+          } elseif (  is_page() ) {
+              if( $post->post_parent  ) {
+                  $anc = get_post_ancestors( $post->ID );
+                  $title = get_the_title();
+                  foreach ( $anc as $ancestor ) {
+                      $output = '<li><a href="'.get_permalink($ancestor).'" title="'.get_the_title($ancestor).'">'.get_the_title($ancestor).'</a></li>';
+                  }
+                  echo $output;
+                  echo '<li><strong>'.$title.'</strong></li>';
+              } else {
+                  echo '<li><strong>'.get_the_title().'</strong></li>';
+              }
+          }
+      }
+      elseif (  is_tag()  ) { single_tag_title(); }
+      elseif (  is_day()  ) { echo "<li>".__('Archivo para','sanando')." "; the_time('F jS, Y'); echo '</li>'; }
+      elseif (  is_month()  ) { echo "<li>".__('Archivo para','sanando')." "; the_time('F, Y'); echo '</li>'; }
+      elseif (  is_year() ) {  echo "<li>".__('Archivo para','sanando')." "; the_time('Y'); echo '</li>'; }
+      elseif (  is_author() ) {  echo"<li>".__('Archivo de Autor','sanando')." "; echo '</li>'; }
+      elseif (  isset($_GET['paged']) && !empty($_GET['paged']) ) {  echo "<li>".__('Archivos del Blog','sanando'); echo '</li>'; }
+      elseif (  is_search() ) { echo "<li>".__('Resultados de Búsqueda','sanando'); echo '</li>'; }
+    echo '</ol>';
+}
 ?>
