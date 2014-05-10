@@ -1,3 +1,4 @@
+		<?php echo do_shortcode( '[mc4wp_form]' ); ?>
 		<hr />
 		<footer id="footer-main">
 			<p>Fundación Sanando &copy; 2012 - <?php echo date('Y'); ?>. RIF. J-403294585. Caracas, Venezuela.</p>
