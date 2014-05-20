@@ -12,6 +12,7 @@
 
 				<?php endwhile; // end of the loop. ?>
 			</article>
+			<div id="article-comments"></div>
 		</div>
 	</div>
 </div>

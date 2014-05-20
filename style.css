@@ -43,7 +43,7 @@ html {
 	margin-top: 0 !important;
 }
 body {
-	font-family: 'Baskerville', 'baskervald_adf_stdregular', 'Times New Roman', serif;
+	font-family: 'Baskerville', 'baskervald_adf_stdregular', 'Times New Roman', serif !important;
 }
 .btn {
 	background-image: none;
@@ -51,6 +51,39 @@ body {
 }
 .center {
 	text-align: center;
+}
+.form-control:focus {
+	border-color: rgba(65,166,42,1);
+	outline: 0;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(65,166,42,.6);
+	box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(65,166,42,.6);
+}
+::selection {
+	background: rgba(65,166,42,.6); /* Safari */
+}
+::-moz-selection {
+	background: rgba(65,166,42,.6); /* Firefox */
+}
+.alignleft {
+	float: left;
+}
+
+.alignright {
+	float: right;
+}
+
+.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+img .alignleft { margin: 0 .3em 0 0; }
+img .alignright { margin: 0 0 0 .3em; }
+.home .alert-danger {
+	background: rgba(182,12,28,1);
+	font-size: 1.2em;
+	color: rgba(255,255,255,1);
+	text-shadow: 0 0 1px rgba(172,2,18,1);
 }
 /**
  * NAVIGATION BAR
@@ -156,7 +189,7 @@ body.logged-in .navbar-default {
 	font-size: 2em;
 	width: 50%;
 	margin: 0 auto;
-	font-family: 'Baskerville', 'baskervald_adf_stditalic', 'Times New Roman', serif;
+	font-family: 'Baskerville', 'baskervald_adf_stditalic', 'Times New Roman', serif !important;
 }
 @media all and ( max-width: 400px ) {
 	.jumbotron .quote {
@@ -255,10 +288,40 @@ body.logged-in .navbar-default {
 	}
 }
 /**
+ * NAVIGATION TABS
+ */
+.nav-tabs a {
+	color: rgba(65,166,42,1) !important;
+}
+.nav-tabs .active a {
+	color: rgba(0,0,0,1) !important;
+}
+/**
  * FOOTER
  */
 footer {
 	clear: both;
 	text-align: center;
 	padding: 1em 0 0 0;
+}
+footer .footer-links a {
+	color: rgba(180, 180, 180, 1);
+	text-shadow: 0 0 1px rgba(255, 255, 255, .5);
+	-webkit-transition: 0.3s all linear;
+	-moz-transition: 0.3s all linear;
+	-ms-transition: 0.3s all linear;
+	-o-transition: 0.3s all linear;
+	transition: 0.3s all linear;
+	-webkit-appearance: none;
+}
+footer .footer-links a:hover {
+	color: rgba(65,166,42,1);
+	text-shadow: 0 0 1px rgba(255,255,255,1);
+	text-decoration: none;
+	-webkit-transition: 0.3s all linear;
+	-moz-transition: 0.3s all linear;
+	-ms-transition: 0.3s all linear;
+	-o-transition: 0.3s all linear;
+	transition: 0.3s all linear;
+	-webkit-appearance: none;
 }

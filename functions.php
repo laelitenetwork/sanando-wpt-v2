@@ -31,7 +31,7 @@ add_theme_support( 'custom-header' );
 add_theme_support( 'menus' );
 
 // Menu output mods
-class Bootstrap_walker extends Walker_Nav_Menu{
+class Bootstrap_walker extends Walker_Nav_Menu {
 
   function start_el(&$output, $object, $depth = 0, $args = Array(), $current_object_id = 0){
 
@@ -176,7 +176,7 @@ function sanando_customize_register( $wp_customize ) {
       $wp_customize,
       'jumbotron_hpquote',
       array(
-        'label'          => __( 'Frase de Entrada', 'Fundación Sanando v2.0' ),
+        'label'          => __( 'Frase de Entrada', 'sanando' ),
         'section'        => 'sanando_front_end',
         'settings'       => 'jumbotron_hpquote',
         'type'           => 'text',
@@ -195,7 +195,7 @@ function sanando_customize_register( $wp_customize ) {
       $wp_customize,
       'jumbotron_hpcalltoaction',
       array(
-        'label'          => __( 'Título del Botón', 'Fundación Sanando v2.0' ),
+        'label'          => __( 'Título del Botón', 'sanando' ),
         'section'        => 'sanando_front_end',
         'settings'       => 'jumbotron_hpcalltoaction',
         'type'           => 'text',
@@ -214,7 +214,7 @@ function sanando_customize_register( $wp_customize ) {
       $wp_customize,
       'jumbotron_hpcalltoaction_link',
       array(
-        'label'          => __( 'Enlace del Botón', 'Fundación Sanando v2.0' ),
+        'label'          => __( 'Enlace del Botón', 'sanando' ),
         'section'        => 'sanando_front_end',
         'settings'       => 'jumbotron_hpcalltoaction_link',
         'type'           => 'dropdown-pages',
@@ -233,9 +233,28 @@ function sanando_customize_register( $wp_customize ) {
       $wp_customize,
       'medicamentos_donados',
       array(
-        'label'          => __( 'Medicamentos Donados', 'Fundación Sanando v2.0' ),
+        'label'          => __( 'Medicamentos Donados', 'sanando' ),
         'section'        => 'sanando_front_end',
         'settings'       => 'medicamentos_donados',
+        'type'           => 'text',
+      )
+    )
+  );
+  // Alertas
+  $wp_customize->add_setting( 'homepage_alert' , array(
+    'id'          => 'homepage_alert',
+    'default'     => 'Esta es una <strong>alerta al Público</strong>',
+    'transport'   => 'refresh',
+  ) );
+  // Control
+  $wp_customize->add_control(
+    new WP_Customize_Control(
+      $wp_customize,
+      'homepage_alert',
+      array(
+        'label'          => __( 'Alerta al Público', 'sanando' ),
+        'section'        => 'sanando_front_end',
+        'settings'       => 'homepage_alert',
         'type'           => 'text',
       )
     )
@@ -261,25 +280,41 @@ function the_breadcrumb() {
           echo '<li><a href="';
             echo get_option('home');
           echo '">';
-            echo 'Home';
+            echo __('Inicio', 'sanando');
           echo '</a></li>';
-          if (  is_category() || is_single()  ) {
-              echo '<li>';
-                echo the_category(' </li><li> ');
-              echo '</li>';
+          if( is_post_type_archive() ) {
+            echo '<li>';
+              echo post_type_archive_title();
+            echo '</li>';
+          }
+          if (  is_category() || is_single() ) {
+              if( get_post_type() != 'post' || get_post_type() != 'page' ) {
+                echo '<li><a href="';
+                  echo get_option('home');
+                echo '/'.get_post_type().'">';
+                echo ucwords( get_post_type() );
+                echo '</a></li>';
+              } else {
+                echo '<li>';
+                  echo the_category(' </li><li> ');
+                echo '</li>';
+              }
               if (is_single()) {
                   echo '</li><li>';
                     the_title();
                   echo '</li>';
               }
           } elseif (  is_page() ) {
-              if( $post->post_parent  ) {
+             if( $post->post_parent  ) {
                   $anc = get_post_ancestors( $post->ID );
                   $title = get_the_title();
                   foreach ( $anc as $ancestor ) {
-                      $output = '<li><a href="'.get_permalink($ancestor).'" title="'.get_the_title($ancestor).'">'.get_the_title($ancestor).'</a></li>';
+                      $output[] = '<li><a href="'.get_permalink($ancestor).'" title="'.get_the_title($ancestor).'">'.get_the_title($ancestor).'</a></li>';
                   }
-                  echo $output;
+                  $output = array_reverse( $output );
+                  foreach ($output as $key => $value) {
+                    echo $value;
+                  }
                   echo '<li><strong>'.$title.'</strong></li>';
               } else {
                   echo '<li><strong>'.get_the_title().'</strong></li>';
@@ -287,12 +322,45 @@ function the_breadcrumb() {
           }
       }
       elseif (  is_tag()  ) { single_tag_title(); }
-      elseif (  is_day()  ) { echo "<li>".__('Archivo para','sanando')." "; the_time('F jS, Y'); echo '</li>'; }
-      elseif (  is_month()  ) { echo "<li>".__('Archivo para','sanando')." "; the_time('F, Y'); echo '</li>'; }
-      elseif (  is_year() ) {  echo "<li>".__('Archivo para','sanando')." "; the_time('Y'); echo '</li>'; }
-      elseif (  is_author() ) {  echo"<li>".__('Archivo de Autor','sanando')." "; echo '</li>'; }
-      elseif (  isset($_GET['paged']) && !empty($_GET['paged']) ) {  echo "<li>".__('Archivos del Blog','sanando'); echo '</li>'; }
-      elseif (  is_search() ) { echo "<li>".__('Resultados de Búsqueda','sanando'); echo '</li>'; }
+      elseif (  is_day()  ) { echo "<li>".__('Archivo','sanando')." "; the_time('F jS, Y'); echo '</li>'; }
+      elseif (  is_month()  ) { echo "<li>".__('Archivo','sanando')." "; the_time('F, Y'); echo '</li>'; }
+      elseif (  is_year() ) {  echo "<li>".__('Archivo','sanando')." "; the_time('Y'); echo '</li>'; }
+      elseif (  is_author() ) {  echo"<li>".__('Autor','sanando')." "; echo '</li>'; }
+      elseif (  isset($_GET['paged']) && !empty($_GET['paged']) ) {  echo "<li>".__('Archivos','sanando'); echo '</li>'; }
+      elseif (  is_search() ) { echo "<li>".__('Resultados','sanando'); echo '</li>'; }
     echo '</ol>';
 }
+/**
+ * Disqus Comments
+ */
+function disqus_lazyload() {
+  wp_register_script('disqus', get_template_directory_uri() . '/assets/scripts/disqus_lazyload.js');
+  wp_enqueue_script('disqus');
+}
+add_action('wp_footer', 'disqus_lazyload');
+/**
+ * Login
+ */
+function my_login_stylesheet() { ?>
+    <link rel="stylesheet" id="custom_wp_admin_css"  href="<?php echo get_bloginfo( 'stylesheet_directory' ) . '/style.css'; ?>" type="text/css" media="all" />
+<?php }
+add_action( 'login_enqueue_scripts', 'my_login_stylesheet' );
+function my_login_logo() { ?>
+    <style type="text/css">
+        body.login div#login h1 a {
+            background-image: url(<?php echo get_template_directory_uri(); ?>/assets/images/logo_80.png);
+            padding-bottom: 30px;
+        }
+    </style>
+<?php }
+add_action( 'login_enqueue_scripts', 'my_login_logo' );
+function my_login_logo_url() {
+    return get_bloginfo( 'url' );
+}
+add_filter( 'login_headerurl', 'my_login_logo_url' );
+
+function my_login_logo_url_title() {
+    return get_bloginfo('name');
+}
+add_filter( 'login_headertitle', 'my_login_logo_url_title' );
 ?>

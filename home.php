@@ -11,6 +11,21 @@
 		<hr />
 	</div>
 	<div class="row">
+		<hr />
+		<p class="center">Reseñados por</p>
+		<p>
+			<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/medios/vogue.png" />
+			<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/medios/scene.png" />
+			<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/medios/elnacional.png" />
+			<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/medios/eluniversal.png" />
+			<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/medios/estampas.png" />
+			<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/medios/canal-i.png" />
+			<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/medios/0800flor.png" />
+			<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/medios/inspirulina.png" />
+		</p>
+		<hr />
+	</div>
+	<div class="row">
 		<div class="col-md-4">
 			<h2>¿Qué Hacemos?</h2>
 			<p>
@@ -20,7 +35,7 @@
 				aceptamos y hacemos donaciones, no vendemos.
 			</p>
 			<p class="center">
-				<a class="btn btn-default" href="#" role="button">Conoce Nuestra Labor »</a>
+				<a class="btn btn-warning btn-lg" href="#" role="button">Conoce Nuestra Labor »</a>
 			</p>
 		</div>
 		<div class="col-md-4">
@@ -32,7 +47,7 @@
 				que ya no necesitan.
 			</p>
 			<p class="center">
-				<a class="btn btn-default" href="#" role="button">Únete a Nuestra Causa »</a>
+				<a class="btn btn-warning btn-lg" href="#" role="button">Únete a Nuestra Causa »</a>
 			</p>
 		</div>
 		<div class="col-md-4">
@@ -43,7 +58,7 @@
 				nuestra misión es ayudar a quienes necesitan curar sus dolencias y no consiguen como.
 			</p>
 			<p class="center">
-				<a class="btn btn-default" href="#" role="button">Aprende más »</a>
+				<a class="btn btn-warning btn-lg" href="#" role="button">Aprende más »</a>
 			</p>
 		</div>
 	</div>
