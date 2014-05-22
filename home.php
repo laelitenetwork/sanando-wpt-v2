@@ -10,18 +10,16 @@
 		<p class="lead center">Hemos donado <strong><?php echo get_theme_mod('medicamentos_donados'); ?></strong> medicamentos e insumos a toda Venezuela</p>
 		<hr />
 	</div>
-	<div class="row">
-		<hr />
-		<p class="center">Reseñados por</p>
-		<p>
-			<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/medios/vogue.png" />
-			<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/medios/scene.png" />
-			<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/medios/elnacional.png" />
-			<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/medios/eluniversal.png" />
-			<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/medios/estampas.png" />
-			<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/medios/canal-i.png" />
-			<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/medios/0800flor.png" />
-			<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/medios/inspirulina.png" />
+	<div class="row hidden-xs hidden-sm">
+		<p class="center">Vistos en</p>
+		<p class="center">
+			<span data-picture data-alt="Medios que nos han reseñado" class="jumbopicture">
+				<span data-src="http://staticelite.info/sanando/images/medios_996.png"></span>
+				<span data-src="http://staticelite.info/sanando/images/medios_760.png" data-media="(min-width: 760px)"></span>
+				<span data-src="http://staticelite.info/sanando/images/medios_996.png" data-media="(min-width: 1000px)"></span>
+				<!-- Fallback content for non-JS browsers. Same img src as the initial, unqualified source element. -->
+				<noscript><img src="http://staticelite.info/sanando/images/medios_996.png"></noscript>
+			</span>
 		</p>
 		<hr />
 	</div>

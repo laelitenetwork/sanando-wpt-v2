@@ -11,15 +11,15 @@
     <title><?php wp_title( '|', true, 'right' ); bloginfo( 'name' ); ?></title>
     <meta name="author" content="L'Elite de Jose Sayago" />
     <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
-    <link rel="icon" type="image/x-icon" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="http://staticelite.info/sanando/images/favicon.ico" />
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
       <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
     <![endif]-->
-    <?php wp_head(); ?>
-    <script>document.createElement( "picture" );</script>
+    <script type="text/javascript">document.createElement( "picture" );</script>
+    <?php wp_head(); ?>    
 </head>
 <body <?php body_class(); ?> id="sanando">
 	<div class="wrapper">

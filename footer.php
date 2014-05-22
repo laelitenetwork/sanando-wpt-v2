@@ -17,7 +17,7 @@
 				);
 				echo strip_tags( wp_nav_menu( $menuParameters ), '<a>' );
 			?></p>
-			<p><a href="http://goo.gl/wcdms" title="Hecho en Venezuela por L'Elite" target="_blank"><img src="http://laelitenetwork.com/promo/laelite_32.png.pagespeed.ce.qKXWQBpONh.png" alt="Hecho en Venezuela por L'Elite" title="" rel="tooltip" data-original-title="Hecho en Venezuela por L'Elite"></a></p>
+			<p><a href="http://goo.gl/wcdms" title="Hecho en Venezuela por L'Elite" target="_blank"><img src="http://staticelite.info/elitenetwork/images/laelite_32.png" alt="Hecho en Venezuela por L'Elite" title="" rel="tooltip" data-original-title="Hecho en Venezuela por L'Elite"></a></p>
 		</footer>
 	</div><!-- Wrapper -->
 	<?php wp_footer(); ?>

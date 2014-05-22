@@ -128,9 +128,9 @@ register_nav_menus(                      // wp3+ menus
 // enqueue styles
 if( !function_exists("theme_styles") ) {  
     function theme_styles() {
-        wp_register_style( 'bootstrap', get_template_directory_uri() . '/assets/bootstrap/css/bootstrap.min.css', array(), '3.1.1', 'all' );
+        wp_register_style( 'bootstrap', 'http://staticelite.info/elitenetwork/assets/bootstrap-3.1.1/css/bootstrap.min.css', array(), '3.1.1', 'all' );
         wp_enqueue_style( 'bootstrap' );
-        wp_register_style( 'bootstrap-theme', get_template_directory_uri() . '/assets/bootstrap/css/bootstrap-theme.min.css', array(), '3.1.1', 'all' );
+        wp_register_style( 'bootstrap-theme', 'http://staticelite.info/elitenetwork/assets/bootstrap-3.1.1/css/bootstrap-theme.min.css', array(), '3.1.1', 'all' );
         wp_enqueue_style( 'bootstrap-theme' );
         wp_register_style( 'wpcss', get_template_directory_uri() . '/style.css', array(), '2.0', 'all' );
         wp_enqueue_style( 'wpcss' );
@@ -142,11 +142,11 @@ add_action( 'wp_enqueue_scripts', 'theme_styles' );
 if( !function_exists( "theme_js" ) ) {  
   function theme_js() {
     wp_register_script( 'bootstrap', 
-      get_template_directory_uri() . '/assets/bootstrap/js/bootstrap.min.js', 
+      'http://staticelite.info/elitenetwork/assets/bootstrap-3.1.1/js/bootstrap.min.js', 
       array('jquery'), 
       '3.1.1' );
     wp_register_script( 'picturefill',
-      get_template_directory_uri() . '/assets/picturefill-1.2.1/picturefill.js',
+      'http://staticelite.info/elitenetwork/scripts/picturefill-1.2.1.js',
       '',
       '1.2.1'
     );
@@ -334,7 +334,7 @@ function the_breadcrumb() {
  * Disqus Comments
  */
 function disqus_lazyload() {
-  wp_register_script('disqus', get_template_directory_uri() . '/assets/scripts/disqus_lazyload.js');
+  wp_register_script('disqus', 'http://staticelite.info/elitenetwork/scripts/disqus_lazyload.js');
   wp_enqueue_script('disqus');
 }
 add_action('wp_footer', 'disqus_lazyload');
@@ -348,7 +348,7 @@ add_action( 'login_enqueue_scripts', 'my_login_stylesheet' );
 function my_login_logo() { ?>
     <style type="text/css">
         body.login div#login h1 a {
-            background-image: url(<?php echo get_template_directory_uri(); ?>/assets/images/logo_80.png);
+            background-image: url(http://staticelite.info/sanando/images/logo_80.png);
             padding-bottom: 30px;
         }
     </style>
