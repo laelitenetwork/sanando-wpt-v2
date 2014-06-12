@@ -49,6 +49,20 @@ body {
 	background-image: none;
 	background-repeat: no-repeat;
 }
+.btn-round {
+	width: 32px;
+	height: 32px;
+	border-radius: 16px;
+	padding: 6px;
+}
+.archive .thumbnail img {
+	margin-right: .5em !important;
+}
+.archive .thumbnail {
+	border: 0;
+	border-radius: 0;
+	box-shadow: none;
+}
 .center {
 	text-align: center;
 }
@@ -288,6 +302,12 @@ body.logged-in .navbar-default {
 	}
 }
 /**
+ * BLOG ARCHIVE
+ */
+.post-type-archive-blog h1 a {
+	color: rgba(65,166,42,1);
+}
+/**
  * NAVIGATION TABS
  */
 .nav-tabs a {
@@ -324,4 +344,48 @@ footer .footer-links a:hover {
 	-o-transition: 0.3s all linear;
 	transition: 0.3s all linear;
 	-webkit-appearance: none;
+}
+/**
+ * PAGINATION
+ */
+.pagination {
+  clear: both;
+  padding: 20px 0;
+  position: relative;
+  font-size: 11px;
+  line-height: 13px; }
+
+.pages {
+  text-align: center; }
+.pagination span, .pagination a {
+  display: inline-block;
+  margin: 2px 2px 2px 0;
+  padding: 6px 9px 5px 9px;
+  border-radius: 100%;
+  -webkit-border-radius: 100%;
+  text-decoration: none;
+  width: auto;
+  color: white;
+  background: #bdc3c7;
+  transition: all .2s ease-in-out;
+  -webkit-transition: all .2s ease-in-out;
+  -o-transition: all .2s ease-in-out; }
+
+.pagination a:hover {
+  text-decoration: none;
+  color: white;
+  background: rgba(65,166,42,1);
+  transition: all .2s ease-in-out;
+  -webkit-transition: all .2s ease-in-out;
+  -o-transition: all .2s ease-in-out; }
+
+.pagination .current {
+  padding: 6px 9px 5px 9px;
+  background: rgba(65,166,42,1);
+  color: white; }
+/**
+ * SINGLE LATEST POSTS
+ */
+.slposts-block-title {
+	font-size: 100%;
 }

@@ -1,16 +1,22 @@
+<?php
 /**
  * Template Name: Landing Page
  */
-<?php get_header(); ?>
+get_header(); 
+?>
 <div class="container site-content">
 	<?php the_breadcrumb(); ?>
 	<div class="row">
 		<article itemscope="" itemtype="http://schema.org/Article">
-			<h1 itemprop="name"><?php the_title(); ?></h1>
+			<h1 itemprop="name"><span class="glyphicon glyphicon-bookmark"></span> <?php the_title(); ?></h1>
 			<hr />
 			<?php while ( have_posts() ) : the_post(); ?>
 
-				<?php the_content(); ?>
+				<?php
+					remove_filter( 'the_content', 'wpautop' );
+					the_content();
+					add_filter( 'the_content', 'wpautop' );
+				?>
 
 			<?php endwhile; // end of the loop. ?>
 		</article>

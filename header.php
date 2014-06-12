@@ -55,13 +55,13 @@
 		<div class="jumbotron">
 			<div class="container">
 				<span data-picture data-alt="Necesitamos Sede" class="jumbopicture">
-					<span data-src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/Boceto_1_960.jpg"></span>
-					<span data-src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/Boceto_1_260.jpg" data-media="(min-width: 300px)"></span>
-					<span data-src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/Boceto_1_360.jpg" data-media="(min-width: 400px)"></span>
-					<span data-src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/Boceto_1_760.jpg" data-media="(min-width: 800px)"></span>
-					<span data-src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/Boceto_1_960.jpg" data-media="(min-width: 1000px)"></span>
+					<span data-src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/Boceto_2_960.jpg"></span>
+					<span data-src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/Boceto_2_260.jpg" data-media="(min-width: 300px)"></span>
+					<span data-src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/Boceto_2_360.jpg" data-media="(min-width: 400px)"></span>
+					<span data-src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/Boceto_2_760.jpg" data-media="(min-width: 800px)"></span>
+					<span data-src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/Boceto_2_960.jpg" data-media="(min-width: 1000px)"></span>
 					<!-- Fallback content for non-JS browsers. Same img src as the initial, unqualified source element. -->
-					<noscript><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/Boceto_1_960.jpg" alt="Necesitamos Sede"></noscript>
+					<noscript><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/Boceto_2_960.jpg" alt="Necesitamos Sede"></noscript>
 				</span>
 				<p class="quote">
 					<em><?php echo get_theme_mod('jumbotron_hpquote'); ?></em>
