@@ -262,6 +262,25 @@ function sanando_customize_register( $wp_customize ) {
       )
     )
   );
+  // Teléfono
+  $wp_customize->add_setting( 'phone_number' , array(
+    'id'          => 'phone_number',
+    'default'     => '555-555-555',
+    'transport'   => 'refresh',
+  ) );
+  // Control
+  $wp_customize->add_control(
+    new WP_Customize_Control(
+      $wp_customize,
+      'phone_number',
+      array(
+        'label'          => __( 'Teléfono', 'sanando' ),
+        'section'        => 'sanando_front_end',
+        'settings'       => 'phone_number',
+        'type'           => 'text',
+      )
+    )
+  );
 }
 add_action( 'customize_register', 'sanando_customize_register' );
 /**

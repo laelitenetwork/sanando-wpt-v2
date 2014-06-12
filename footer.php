@@ -6,7 +6,7 @@
 		</div>
 		<hr />
 		<footer id="footer-main">
-			<p>Fundación Sanando &copy; 2012 - <?php echo date('Y'); ?>. RIF. J-403294585. Caracas, Venezuela.</p>
+			<p>Fundación Sanando &copy; 2012 - <?php echo date('Y'); ?>. RIF. J-403294585. Caracas, Venezuela. <?php if( !empty( 'phone_number' ) ) { echo '<span class="glyphicon glyphicon-phone-alt"></span> '.get_theme_mod( 'phone_number' ); } ?></p>
 			<p class="footer-links"><?php
 				$menuParameters = array(
 					'theme_location'	=> 'footer_links',
