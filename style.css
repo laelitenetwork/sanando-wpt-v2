@@ -99,6 +99,9 @@ img .alignright { margin: 0 0 0 .3em; }
 	color: rgba(255,255,255,1);
 	text-shadow: 0 0 1px rgba(172,2,18,1);
 }
+a img {
+	border: 0;
+}
 /**
  * NAVIGATION BAR
  */
@@ -388,4 +391,116 @@ footer .footer-links a:hover {
  */
 .slposts-block-title {
 	font-size: 100%;
+}
+/**
+ * CHOCOLATADAS SOLIDARIAS
+ */
+body.page-template-chocolatadas-solidarias-php {
+
+}
+body.page-template-chocolatadas-solidarias-php .jumbotron {
+	background: rgba(27,22,16,1);
+	background-size: auto;
+	-webkit-background-size: auto;
+	-moz-background-size: auto;
+	-o-background-size: auto;
+	padding: 0;
+	position: relative;
+	display: block;
+	height: auto;
+	clear: both;
+	border-radius: 0;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+}
+body.page-template-chocolatadas-solidarias-php .jumbotron .container {
+	padding: 0;
+	text-align: center;
+}
+body.page-template-chocolatadas-solidarias-php .site-content {
+
+}
+/**
+ * MINI GIOVANNA VENEZUELA
+ */
+body.page-template-mini-giovanna-php {
+
+}
+body.page-template-mini-giovanna-php .jumbotron {
+	background: rgba(27,22,16,1);
+	background-size: auto;
+	-webkit-background-size: auto;
+	-moz-background-size: auto;
+	-o-background-size: auto;
+	padding: 0;
+	position: relative;
+	display: block;
+	height: auto;
+	clear: both;
+	border-radius: 0;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+}
+body.page-template-mini-giovanna-php .jumbotron .container {
+	padding: 0;
+	text-align: center;
+}
+body.page-template-mini-giovanna-php .site-content {
+
+}
+/**
+ * JORNADAS DE RECOLECCIÓN
+ */
+body.page-template-jornadas-recoleccion-php {
+
+}
+body.page-template-jornadas-recoleccion-php .jumbotron {
+	background: transparent;
+	background-size: auto;
+	-webkit-background-size: auto;
+	-moz-background-size: auto;
+	-o-background-size: auto;
+	padding: 0;
+	position: relative;
+	display: block;
+	height: auto;
+	clear: both;
+	border-radius: 0;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+}
+body.page-template-jornadas-recoleccion-php .jumbotron .container {
+	padding: 0;
+	text-align: center;
+}
+body.page-template-jornadas-recoleccion-php .site-content {
+
+}
+/**
+ * ÁNGELES VIAJEROS
+ */
+body.page-template-angeles-viajeros-php {
+
+}
+body.page-template-angeles-viajeros-php .jumbotron {
+	background: transparent;
+	background-size: auto;
+	-webkit-background-size: auto;
+	-moz-background-size: auto;
+	-o-background-size: auto;
+	padding: 0;
+	position: relative;
+	display: block;
+	height: auto;
+	clear: both;
+	border-radius: 0;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+}
+body.page-template-angeles-viajeros-php .jumbotron .container {
+	padding: 0;
+	text-align: center;
+}
+body.page-template-angeles-viajeros-php .site-content {
+
 }

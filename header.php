@@ -33,7 +33,7 @@
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 						</button>
-						<a class="navbar-brand" title="<?php echo get_bloginfo('description'); ?>" href="<?php echo home_url(); ?>"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/logo_45.png" alt="<?php bloginfo('name'); ?>" /></a>
+						<a class="navbar-brand" title="<?php echo get_bloginfo('description'); ?>" href="<?php echo home_url(); ?>"><img src="http://staticelite.info/sanando/images/logo_45.png" alt="<?php bloginfo('name'); ?>" /></a>
 					</div>
 					<div class="collapse navbar-collapse navbar-responsive-collapse">
 						<?php wp_bootstrap_main_nav(); // Adjust using Menus in Wordpress Admin ?>
@@ -54,15 +54,17 @@
 
 		<div class="jumbotron">
 			<div class="container">
-				<span data-picture data-alt="Necesitamos Sede" class="jumbopicture">
-					<span data-src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/Boceto_2_960.jpg"></span>
-					<span data-src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/Boceto_2_260.jpg" data-media="(min-width: 300px)"></span>
-					<span data-src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/Boceto_2_360.jpg" data-media="(min-width: 400px)"></span>
-					<span data-src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/Boceto_2_760.jpg" data-media="(min-width: 800px)"></span>
-					<span data-src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/Boceto_2_960.jpg" data-media="(min-width: 1000px)"></span>
-					<!-- Fallback content for non-JS browsers. Same img src as the initial, unqualified source element. -->
-					<noscript><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/Boceto_2_960.jpg" alt="Necesitamos Sede"></noscript>
-				</span>
+				<a href="<?php echo get_permalink( get_theme_mod('jumbotron_hpcalltoaction_link') ); ?>">
+					<span data-picture data-alt="Necesitamos Sede" class="jumbopicture">
+						<span data-src="http://staticelite.info/sanando/images/campanas/Sede_960.jpg"></span>
+						<span data-src="http://staticelite.info/sanando/images/campanas/Sede_260.jpg" data-media="(min-width: 300px)"></span>
+						<span data-src="http://staticelite.info/sanando/images/campanas/Sede_360.jpg" data-media="(min-width: 400px)"></span>
+						<span data-src="http://staticelite.info/sanando/images/campanas/Sede_760.jpg" data-media="(min-width: 800px)"></span>
+						<span data-src="http://staticelite.info/sanando/images/campanas/Sede_960.jpg" data-media="(min-width: 1000px)"></span>
+						<!-- Fallback content for non-JS browsers. Same img src as the initial, unqualified source element. -->
+						<noscript><img src="http://staticelite.info/sanando/images/campanas/Sede_960.jpg" alt="Necesitamos Sede"></noscript>
+					</span>
+				</a>
 				<p class="quote">
 					<em><?php echo get_theme_mod('jumbotron_hpquote'); ?></em>
 				</p>
