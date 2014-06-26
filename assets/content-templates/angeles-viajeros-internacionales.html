@@ -38,24 +38,12 @@
 		<div class="col-lg-6">
 			<h3>Requisitos que Solicitamos</h3>
 			<ul class="list-group">
-				<li class="list-group-item"><strong>Datos Personales</strong>
-					<ul class="list-group">
-						<li class="list-group-item list-group-item-info">Nombres y Apellidos</li>
-						<li class="list-group-item list-group-item-info">Número de Pasaporte</li>
-						<li class="list-group-item list-group-item-info">Nacionalidad</li>
-						<li class="list-group-item list-group-item-info">Teléfono de Contacto</li>
-						<li class="list-group-item list-group-item-info">Correo Electrónico</li>
-					</ul>
-				</li>
-				<li class="list-group-item"><strong>Datos del Vuelo</strong>
-					<ul class="list-group">
-						<li class="list-group-item list-group-item-info">Aeropuerto de Salida</li>
-						<li class="list-group-item list-group-item-info">Número de Vuelo</li>
-						<li class="list-group-item list-group-item-info">Fecha de llegada</li>
-						<li class="list-group-item list-group-item-info">Hora de llegada</li>
-						<li class="list-group-item list-group-item-info">Puerta de Desembarque</li>
-					</ul>
-				</li>
+				<li class="list-group-item list-group-item-info">Nombres y Apellidos</li>
+				<li class="list-group-item list-group-item-info">Número de Pasaporte</li>
+				<li class="list-group-item list-group-item-info">Nacionalidad</li>
+				<li class="list-group-item list-group-item-info">Teléfono de Contacto</li>
+				<li class="list-group-item list-group-item-info">Correo Electrónico</li>
+				<li class="list-group-item list-group-item-info">País de Salida</li>
 			</ul>
 		</div>
 		<div class="col-lg-6">
@@ -63,7 +51,7 @@
 			<ul class="list-group">
 				<li class="list-group-item list-group-item-warning">Entregar las medicinas e insumos médicos en el punto de recogida asignado.</li>
 				<li class="list-group-item list-group-item-warning">Realizar la entrega en un plazo no mayor a 72 horas de entrada al país.</li>
-				<li class="list-group-item list-group-item-warning">Confirmar 24 horas del viaje, si cumplirá con el compromiso.</li>
+				<li class="list-group-item list-group-item-warning">Confirmar 24 horas antes del viaje, si cumplirá con el compromiso.</li>
 				<li class="list-group-item list-group-item-warning">Mantener el contacto por teléfono y correo electrónico hasta que se realice la entrega.</li>
 				<li class="list-group-item list-group-item-danger">No disponer personalmente del contenido de la encomienda.</li>
 				<li class="list-group-item list-group-item-danger">No vender el contenido de la encomienda.</li>
@@ -74,103 +62,34 @@
 	<div class="col-lg-12">
 		<hr />
 		<h2><span class="glyphicon glyphicon-warning-sign"></span> Importante</h2>
-		<p class="lead">
-			La vida de otras personas está en riesgo, muchos de los pacientes que se encuentran en nuestra lista de espera dependen de uno o varios de los medicamentos que los ángeles viajeros se comprometen a traer.
-		</p>
 		<p class="lead text-danger">
-			Ya que alguien puede morir si un ángel viajero incumple con lo prometido, no podemos dejar de repetir la importancia que tiene para nosotros que el compromiso adquirido se respete.
+			La vida de otras personas está en riesgo, tenemos muchos pacientes en lista de espera. Si un ángel viajero incumple con lo prometido, pondremos en situaciones muy difíciles a quienes esperan la ayuda, por ello reiteramos la importancia que tiene para nosotros que el compromiso adquirido por un ángel viajero se respete.
 		</p>
 	</div>
 	<div class="col-lg-12">
 		<hr />
 		<h2><span class="glyphicon glyphicon-pencil"></span> Registro</h2>
-		<!-- Nav tabs -->
-		<ul class="nav nav-tabs" id="tabs-registro">
-			<li class="active"><a href="#personal" data-toggle="tab">Datos Personales</a></li>
-			<li><a href="#vuelo" data-toggle="tab">Datos del Vuelo</a></li>
-		</ul>
-		<form role="form">
-			<div class="tab-content">
-				<div class="tab-pane active" id="personal">
-					<fieldset>
-						<h3>Datos Personales</h3>
-						<hr />
-						<div class="col-lg-6">
-							<div class="input-group input-group-lg">
-								<span class="input-group-addon">Nombres</span>
-								<input type="text" class="form-control" id="first-name" name="first-name" placeholder="p.e: María Latina">
-							</div>
-							<br />
-							<div class="input-group input-group-lg">
-								<span class="input-group-addon">Apellidos</span>
-								<input type="text" class="form-control" id="last-name" name="last-name" placeholder="p.e: Pérez Venezuela">
-							</div>
-							<br />
-							<div class="input-group input-group-lg">
-								<span class="input-group-addon">Nro. de Pasaporte</span>
-								<input type="text" class="form-control" id="passport" name="passport" placeholder="p.e: 123456789">
-							</div>
-						</div>
-						<div class="col-lg-6">
-							<div class="input-group input-group-lg">
-								<span class="input-group-addon">Nacionalidad</span>
-								<input type="text" class="form-control" id="nationality" name="nationality" placeholder="p.e: Venezolana">
-							</div>
-							<br />
-							<div class="input-group input-group-lg">
-								<span class="input-group-addon">Teléfono</span>
-								<input type="text" class="form-control" id="phone" name="phone" placeholder="p.e: 0424-1234567">
-							</div>
-							<br />
-							<div class="input-group input-group-lg">
-								<span class="input-group-addon">Correo Electrónico</span>
-								<input type="text" class="form-control" id="email" name="email" placeholder="p.e: hola@ejemplo.com">
-							</div>
-						</div>
-					</fieldset>
-				</div>
-				<div class="tab-pane" id="vuelo">
-					<fieldset>
-						<h3>Datos del Vuelo</h3>
-						<hr />
-						<div class="col-lg-6">
-							<div class="input-group input-group-lg">
-								<span class="input-group-addon">Aeropuerto de Salida</span>
-								<input type="text" class="form-control" id="airport" name="airport" placeholder="p.e: Adolfo Suárez Madrid-Barajas">
-							</div>
-							<br />
-							<div class="input-group input-group-lg">
-								<span class="input-group-addon">Número de Vuelo</span>
-								<input type="text" class="form-control" id="flight-number" name="flight-number" placeholder="p.e: IB 6405">
-							</div>
-							<br />
-							<div class="input-group input-group-lg">
-								<span class="input-group-addon">Fecha de Llegada</span>
-								<input type="text" class="form-control" id="arrival-date" name="arrival-date" placeholder="p.e: 20 Diciembre 2014">
-							</div>
-						</div>
-						<div class="col-lg-6">
-							<div class="input-group input-group-lg">
-								<span class="input-group-addon">Hora de Llegada</span>
-								<input type="text" class="form-control" id="arrival-time" name="arrival-time" placeholder="p.e: 17:45 (Ven)">
-							</div>
-							<br />
-							<div class="input-group input-group-lg">
-								<span class="input-group-addon">Puerta de Desembarque</span>
-								<input type="text" class="form-control" id="gate" name="gate" placeholder="p.e: 26">
-							</div>
-						</div>
-					</fieldset>
-					<hr />
-					<button type="submit" class="btn btn-success btn-lg">Enviar mis Datos</button>
-				</div>
-			</div>
-		</form>
+		<hr />
+		<p><span class="alert alert-info">Sus datos serán tratados de acuerdo con nuestra <a href="/politicas/politicas-de-privacidad">política de privacidad</a></span></p>
+		<br />
+		[ninja_forms_display_form id=4]
 	</div>
 </div>
 <script type="text/javascript">
-	jQuery('#tabs-registro a').click(function (e) {
-		e.preventDefault();
-		jQuery(this).tab('show');
+	jQuery(document).ready(function(){
+		jQuery('label').each(function(){
+			jQuery(this).replaceWith('<span class="input-group-addon">'+jQuery(this).text().replace('*','')+'</span>');
+		});
+		jQuery('.ninja-forms-form input, .ninja-forms-form select').each(function(){
+			jQuery(this).addClass('form-control');
+		});
+		jQuery('.ninja-forms-form .field-wrap').each(function(){
+			jQuery(this).addClass('input-group input-group-lg');
+		});
+		jQuery('.ninja-forms-form input[type="submit"]').addClass('btn btn-success');
+		jQuery('.ninja-forms-required-items').remove();
+		jQuery('.ninja-forms-form .ninja-forms-field-error').each(function(){
+			jQuery(this).addClass('alert alert-danger');
+		});
 	});
 </script>
